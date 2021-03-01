@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 
@@ -6,10 +6,18 @@ import Logo from './Assets/pokemon-logo.png';
 
 function App() {
 
-  // Declaring pokedex and wildPokemon states using useState hook
+  // Declarando pokedex e wildPokemon states hook
 
   const [pokedex, setPokedex] = useState([])
   const [wildPokemon, setWildPokemon] = useState({});
+
+  // Declarando SearchTerm state hook
+  const [searchTerm, setSearchTerm] = React.useState('');
+
+  // Constante que escuta a mudança do valor do input de pesquisa
+  const handleChange = event => {
+    setSearchTerm(event.target.value);
+  };
 
   // useEffect hook to sync and mount the fetchAPI reqs
 
@@ -56,37 +64,106 @@ function App() {
     fetchAPI()
   }
 
+  const jumpPokemon = (pokemon) => {
+    fetchAPI()
+  }
+
   const releasePokemon = id => {
     setPokedex(state => state.filter(p => p.id !== id))
   }
 
+
+  // Constante que recebe os indices da pokedex como 'pokemon' e retorna o indice 'pokemon'
+
+  const pokeMap = pokedex.map(pokemon => pokemon);
+
+  // Algoritmo de sort em ordem ascendente (alfabetica) recebendo 'name'
+  // Constante que recebe o valor da pokedex[] e aplica um alg sort de ordem alfabetica
+
+  const pokeMapAlph = pokedex.sort(function (a, b) {
+    if (a.name < b.name) { return -1; }
+    if (a.name > b.name) { return 1; }
+    return 0;
+  })
+
+
+
+  // Componente para renderizar a lista 'pokedex' passando os indices como 'pokemon'
+
+  function MapDex() {
+    return (
+      <>
+        {pokedex.map(pokemon => (
+          <div className="pokemon" key={pokemon.id}>
+            <img alt="Pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon.id + ".png"} className="sprite" />
+            <h3 className="pokemon-name">{pokemon.name.toUpperCase()}</h3>
+            <button className="remove" onClick={() => releasePokemon(pokemon.id)}>&times;</button>
+          </div>
+        ))}
+      </>
+    );
+  }
+
+  // Componente para representar condicional de pokedex vazia
+
+  function EmptyDex() {
+    return <p className="empty">Você ainda não possui nenhum pokémon :(</p>
+  }
+
+  // Condicional que interpreta se o peso de pokedex é maior que 0 ou seja 'existe um peso' se sim retorna o componente de map da pokedex se nao retorna componente de texto 'Pokedex vazia'
+
+  function ShowDex() {
+    if (pokedex.length > 0) {
+      return <MapDex />
+    }
+    return <EmptyDex />
+  }
+
   return (
     <div className="app-wrapper">
-        <header>
-          <img alt="logo" src={Logo} className="logo" />
-        <h1 className="title">Explore</h1>
+      <header>
+        <img alt="logo" src={Logo} className="logo" />
         <h1 className="title">Encontre e Capture!</h1>
-        </header>
+      </header>
 
-        <section className="wild-pokemon">
-          <h2>Pokemon disponível</h2>
-          <img alt="Wild Pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + wildPokemon.id + ".png"} className="sprite" />
-          <h3>{wildPokemon.name}</h3>
+      <section className="wild-pokemon">
+        <h2>Pokemon disponível</h2>
+        <img alt="Wild Pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + wildPokemon.id + ".png"} className="sprite" />
+        <h3>{wildPokemon.name}</h3>
+        <div className="buttons">
           <button className="catch-btn" onClick={() => catchPokemon(wildPokemon)}>CAPTURAR AGORA!</button>
-        </section>
+          <button className="jump-btn" onClick={() => jumpPokemon(wildPokemon)}>PRÓXIMO POKEMON</button>
+        </div>
+      </section>
 
-        <section className="pokedex">
-          <h2>Pokédex</h2>
-          <div className="pokedex-list">
-            {pokedex.map(pokemon => (
-              <div className="pokemon" key={pokemon.id}>
-                <img alt="Pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon.id + ".png"} className="sprite" />
-                <h3 className="pokemon-name">{pokemon.name}</h3>
-                <button className="remove" onClick={() => releasePokemon(pokemon.id)}>&times;</button>
-              </div>
-            ))}
-          </div>
-        </section>
+      <section className="filter">
+        <h1>Seus pokémons</h1>
+        <form className="form">
+          <input
+            type="text"
+            className="input-q"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={handleChange}
+          />
+        </form>
+      </section>
+
+
+      <section className="pokedex">
+        <div className="pokedex-list">
+
+          {/* {cond 
+?
+<div>If rendering</div>
+:
+<div>Else rendering</div>
+} */}
+
+          <ShowDex />
+
+        </div>
+      </section>
     </div>
   )
 }
