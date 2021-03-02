@@ -44,9 +44,9 @@ const Pokemons = () => {
                 {pokemons.map(pokemon => (
                     <>
                     <div className="poketype" key={id++}>
-                        <Link to="/pokemon/:pokemon">
+                        {/* <Link to="/pokemon/:pokemon"> */}
                         <h1 className="poketype-title">{pokemon.name}</h1>
-                        </Link>
+                        {/* </Link> */}
                         <img alt="Pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon.url.split('/')[6] + ".png"} className="sprite" />
                     </div>
                     </>
