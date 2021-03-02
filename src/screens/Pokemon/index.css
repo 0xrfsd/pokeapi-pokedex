@@ -1,0 +1,15 @@
+header {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    height: 14vh;
+    background: #FFF;
+    padding-bottom: 20px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .pokemon-logo {
+      margin: 10px;
+      width: 10% !important;
+      height: auto;
+  }

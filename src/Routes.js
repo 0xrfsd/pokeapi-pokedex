@@ -3,53 +3,25 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams
 } from "react-router-dom";
 
-// Params are placeholders in the URL that begin
-// with a colon, like the `:id` param defined in
-// the route in this example. A similar convention
-// is used for matching dynamic segments in other
-// popular web frameworks like Rails and Express.
+import Pokedex from './screens/Deck';
+// import Pokemon from './screens/Pokemon';
+import Pokemons from './screens/Pokemons';
+import Home from './screens/Home';
+import Type from './screens/Type';
 
-export default function ParamsExample() {
+export default function Routes() {
+
   return (
-    <Router>
-      <div>
-        <h2>Accounts</h2>
-
-        <ul>
-          <li>
-            <Link to="/netflix">Netflix</Link>
-          </li>
-          <li>
-            <Link to="/zillow-group">Zillow Group</Link>
-          </li>
-          <li>
-            <Link to="/yahoo">Yahoo</Link>
-          </li>
-          <li>
-            <Link to="/modus-create">Modus Create</Link>
-          </li>
-        </ul>
-
+    <Router>    
         <Switch>
-          <Route path="/:id" children={<Child />} />
+        <Route path="/" exact component={Home}/>
+        <Route path="/deck" component={Pokedex}/>
+        {/* <Route path="/pokemon/:pokemon" component={Pokemon}/> */}
+        <Route path="/pokemons" component={Pokemons}/>
+        <Route path="/type/:type" component={Type}/>
         </Switch>
-      </div>
     </Router>
-  );
-}
-
-function Child() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
-  let { id } = useParams();
-
-  return (
-    <div>
-      <h3>ID: {id}</h3>
-    </div>
   );
 }

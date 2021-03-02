@@ -1,0 +1,297 @@
+.app {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .cards {
+        padding-bottom: 17vh;
+    }
+    .cards::-webkit-scrollbar {
+        display: none;
+    }
+    .card {
+        cursor: pointer;
+        margin: 10px 0px;
+        height: 23vh;
+        width: 30vw;
+        border-radius: 10px;
+        background-color: #fff;
+        opacity: .8;
+    }
+    .card>h2 {
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 16px;
+        padding-top: 6vh;
+        color: #333;
+    }
+    .jumbo {
+        display: flex;
+        flex-direction: row;
+        margin: 0 2.5vh !important;
+        width: 90vw;
+        height: 30vh;
+        margin-top: 5vh !important;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 1px 1px 12px 1px #cdcdcd;
+    }
+    .jumbo>h1 {
+        font-family: 'RocknRoll One', sans-serif;
+        padding-left: 2vh;
+        padding-top: 5vh;
+        color: #333;
+        text-align: left;
+        font-size: 1.5em;
+    }
+    .jumbo>h2 {
+        color: #fff;
+        font-weight: bold;
+        padding-left: 2vh;
+        text-align: left;
+        font-size: 1.5em;
+    }
+    .poke {
+        margin-top: -8vh;
+        margin-left: -8vw;
+        width: 100%;
+        height: auto;
+    }
+    .pokea {
+        margin-left: -100px;
+        width: 100%;
+        height: auto;
+    }
+    .pokeb {
+        margin-left: -100px;
+        width: 100%;
+        height: auto;
+    }
+    .second {
+        margin: 0 2.5vh;
+        width: 98vw;
+        display: flex;
+        flex-direction: row;
+    }
+    .rightodo {
+        padding-top: 15vh !important;
+        margin-top: 5vh;
+        margin-right: 5vh;
+        padding: 1em;
+        height: 25vh;
+        width: 50% !important;
+        border-radius: 10px;
+        background-color: #333;
+        box-shadow: 1px 1px 12px 1px #333;
+    }
+    .leftodo {
+        margin-top: 5vh;
+        padding-top: 15vh !important;
+        margin-right: 5vh;
+        padding: 1em;
+        height: 25vh;
+        width: 50% !important;
+        border-radius: 10px;
+        background-color: #FFDE00;
+        box-shadow: 1px 1px 6px 1px #FFDE00;
+    }
+    .rightopodo {
+        padding-top: 15vh !important;
+        margin-top: 5vh;
+        margin-right: 5vh;
+        padding: 1em;
+        height: 25vh;
+        width: 50% !important;
+        border-radius: 10px;
+        background-color: #3B4CCA;
+        box-shadow: 1px 1px 6px 1px #3B4CCA;
+    }
+    .rightopodo .class {
+        color: #fff;
+        font-size: 16px;
+    }
+    .rightodo>h1 {
+        color: #fff;
+        font-size: 16px;
+    }
+    .leftodo>h1 {
+        color: #333;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .cards {
+        padding-bottom: 25px;
+    }
+    .cards::-webkit-scrollbar {
+        display: none;
+    }
+    .card {
+        cursor: pointer;
+        margin: 10px 0px;
+        height: 20vh;
+        width: 25vw;
+        border-radius: 10px;
+        background-color: #fff;
+        opacity: .8;
+    }
+    .card>h2 {
+        padding-left: 10px;
+        font-size: 16px;
+        padding-top: 16vh;
+        color: #333;
+    }
+    header {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        height: 100px;
+        background: #FFF;
+        padding-bottom: 20px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    }
+    .logo {
+        width: 170px !important;
+        height: auto;
+    }
+    .jumbo {
+        margin-top: 30px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        display: flex;
+        flex-direction: row;
+        margin: 0 5vw;
+        width: 89vw;
+        height: 30vh;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 1px 1px 12px 1px #cdcdcd;
+    }
+    .jumbo>h1 {
+        font-family: 'RocknRoll One', sans-serif;
+        padding-left: 25vh;
+        padding-top: 1vh;
+        color: #333;
+        text-align: left;
+        font-size: 2em;
+    }
+    .jumbo>h2 {
+        color: #333;
+        font-weight: bold;
+        padding-left: 2vh;
+        text-align: left;
+        font-size: 3em;
+    }
+    .poke {
+        margin-top: 4vh;
+        margin-left: 5vw;
+        width: 50%;
+        height: auto;
+    }
+    .second {
+        margin: 0 5vw;
+        width: 91.5vw;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .rightodo {
+        margin-top: 5vh;
+        padding-top: 20vh !important;
+        margin-right: 5vh;
+        padding: 1em;
+        height: 25vh;
+        width: 50% !important;
+        border-radius: 10px;
+        background-color: #333;
+        box-shadow: 1px 1px 12px 1px #333;
+    }
+    .leftodo {
+        margin-top: 5vh;
+        margin-right: 5vh;
+        padding-top: 20vh !important;
+        padding: 1em;
+        height: 25vh;
+        width: 50% !important;
+        border-radius: 10px;
+        background-color: #FFDE00;
+        box-shadow: 1px 1px 6px 1px #FFDE00;
+    }
+    .rightopodo {
+        margin-top: 5vh;
+        margin-right: 5vh;
+        padding-top: 17.5vh !important;
+        padding: 1em;
+        height: 25vh;
+        width: 50% !important;
+        border-radius: 10px;
+        background-color: #3B4CCA;
+        box-shadow: 1px 1px 6px 1px #3B4CCA;
+    }
+    .rightopodo > h1 {
+        margin-top: auto !important;
+        color: #fff;
+        font-size: 32px;
+    }
+    .rightodo > h1 {
+        margin-top: auto !important;
+        font-size: 18px;
+        color: #fff !important;
+    }
+    .leftodo > h1 {
+        margin-top: auto !important;
+        font-size: 18px;
+        color: #fff !important;
+    }
+}
+
+.left>p {
+    text-align: center;
+    color: #fff;
+    font-family: monospace;
+    font-size: 14px;
+    margin: 20px 10px;
+}
+
+.cards {
+    height: auto;
+    overflow-y: auto;
+}
+
+.types {
+    padding: 10px;
+    width: 100vw;
+    overflow-x: scroll;
+    flex-wrap: nowrap !important;
+    padding-left: 20px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.types::-webkit-scrollbar {
+display: none;
+}
+
+.type {
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex;
+    padding: 15px;
+    margin-right: 10px;
+    height: auto !important;
+    width: auto !important;
+    border-radius: 50px;
+    box-shadow: 1px 1px 6px 1px #333;
+    background-color: #333;
+}
+
+.type-name {
+    font-size: 12px;
+    color: #fff;
+}
