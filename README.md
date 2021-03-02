@@ -8,6 +8,9 @@
 In the project directory, you can run:
 
 ### Requisites: [NodeJS, yarn]
+
+### `yarn` to install the application dependencies
+
 ### `yarn start` to start the application on the browser
 
 Runs the app in the development mode.\
