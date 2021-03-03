@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 import axios from 'axios';
 import {
-    useParams
+    useParams,
+    Link
 } from 'react-router-dom';
 
 import Header from '../../components/Header';
@@ -37,15 +38,19 @@ const Type = () => {
 
     let id = 0;
 
+    const backUrl = `/type/:${type.name}`
+
     function TypeResult() {
         return (
             <div className="poketyperesult">
                 {pokeTypeAlph.map(typePoke => (
                     <>
+                        <Link style={{ color: '#fff', fontSize: '12px' }} to={{ pathname: `/pokemon/${typePoke.pokemon.name}`, query: { backUrl } }}>
                     <div className="poketype" key={id++}>
                         <h1 className="poketype-title">{typePoke.pokemon.name}</h1>
                         <img alt="Pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + typePoke.pokemon.url.split('/')[6] + ".png"} className="sprite" />
                     </div>
+                    </Link>
                     </>
                 ))}
             </div>

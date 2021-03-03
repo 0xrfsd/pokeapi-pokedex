@@ -56,15 +56,13 @@ header {
 }
 
 .poketype {
-    background-color: #fff;
-    box-shadow: 1px 1px 1px 1px #cdcdcd;
-    margin-right: 20px;
-    height: 200px;
+    padding: 50px;
+    background-color: #333;
+    box-shadow: 1px 1px 12px 1px #333;
     border-radius: 10px;
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    padding: 15px;
+    width: auto;
+    height: 250px;
+    margin-right: 20px !important;
 }
 
 .sprite {

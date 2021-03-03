@@ -48,7 +48,7 @@ function App() {
                     {/* Função map pra listar cada indice da array que queremos renderizar S2 */}
                     {pokeTypes.map(type => (
                         <Link to={{ pathname: `/type/${type.name}`, query: { backUrl } }}>
-                            <div className="type" key={type[0]}>
+                        <div className="type" key={type[0]}>
                                 <h3 className="type-name">{type.name.toUpperCase()}</h3>
                             </div>
                         </Link>
@@ -65,16 +65,15 @@ function App() {
                 </div>
                 <div className="second">
                 <div className="rightodo">
-                <Link style={{ fontSize: '.5em', color: '#fff' }} to="/deck">
+                <Link style={{ fontSize: '.5em', color: '#fff' }} to="/pokedeck">
                         <h1>
                             Capture pokémons <br />
                         </h1>
                     </Link>
                     </div>
                     <div className="rightopodo">
-                    <Link style={{ fontSize: '8px', color: '#fff' }} to="/pokemons">
+                    <Link style={{ fontSize: '.5em', color: '#fff' }} to="/pokemons">
                         <h1>
-                            <br />
                             Pokémons <br />
                         </h1>
                     </Link>

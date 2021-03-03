@@ -1,1 +1,31 @@
-.a {}
+.poked {
+    padding: 50px;
+    background-color: #333;
+    box-shadow: 1px 1px 12px 1px #333;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    margin-right: 20px !important;
+}
+
+.input {
+    padding-top: 20px;
+}
+
+.prompt {
+    color: #fff !important;
+    background-color: #333;
+    border-radius: 10px;
+    border: 2px solid #333;
+    padding: 10px;
+    outline-width: 0;
+    height: 50px;
+    font-size: 22px;
+    width: 300px;
+    margin: 0 auto !important;
+    display: flex;
+}
+
+.prompt::placeholder{
+    color: #fff;
+}

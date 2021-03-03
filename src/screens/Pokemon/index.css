@@ -13,3 +13,36 @@ header {
       width: 10% !important;
       height: auto;
   }
+
+  .sprite {
+      width: 100% !important;
+      height: auto;
+  }
+  
+  .poke-display {
+      align-items: center !important;
+      justify-content: center !important;
+      display: flex;
+      margin: 0 auto !important;
+      padding: 5vw 10vh;
+  }
+
+  .poke-card {
+      flex-direction: column;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 auto !important;
+      padding: 40px;
+      background-color: #333;
+      border-radius: 10px;
+      width: auto;
+      height: auto;
+  }
+
+.poke-name {
+    text-align: left !important;
+    font-size: 12px;
+    font-family: 'RocknRoll One', sans-serif;
+    color: #fff !important;
+  }

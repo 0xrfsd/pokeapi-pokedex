@@ -5,8 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import Pokedex from './screens/Deck';
-// import Pokemon from './screens/Pokemon';
+import PokeDeck from './screens/PokeDeck';
+import Pokemon from './screens/Pokemon';
 import Pokemons from './screens/Pokemons';
 import Home from './screens/Home';
 import Type from './screens/Type';
@@ -17,8 +17,8 @@ export default function Routes() {
     <Router>    
         <Switch>
         <Route path="/" exact component={Home}/>
-        <Route path="/deck" component={Pokedex}/>
-        {/* <Route path="/pokemon/:pokemon" component={Pokemon}/> */}
+        <Route path="/pokedeck" component={PokeDeck}/>
+        <Route path="/pokemon/:pokename" component={Pokemon}/>
         <Route path="/pokemons" component={Pokemons}/>
         <Route path="/type/:type" component={Type}/>
         </Switch>

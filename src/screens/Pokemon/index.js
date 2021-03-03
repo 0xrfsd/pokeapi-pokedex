@@ -1,23 +1,29 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './index.css'; 
+import './index.css';
 import Header from '../../components/Header';
 import { useParams } from 'react-router-dom';
 
 const Pokemon = () => {
 
-    const { pokemon } = useParams();
+    // Recebe o parametro do nome do poke =)
+
+    const { pokename } = useParams();
 
     // Declarando os tipos de pokemon com state hook :)
 
-    const [iPokemon, setiPokemon] = useState('');
+    const [pokeData, setPokeData] = useState([]);
+
+    // Constante que recebe o valor da URL que queremos puxar =P
+
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokename}`;
 
     // Função para puxar os dados da API :) | Passa os dados p hook 'pokeTypes'
     const fetchPokemon = () => {
         axios
             .get(url)
             .then(response => {
-                setiPokemon(response.data.results);
+                setPokeData(response.data);
             })
     }
 
@@ -27,35 +33,38 @@ const Pokemon = () => {
         fetchPokemon();
     }, [])
 
-    // Constante que recebe o valor da URL que queremos puxar =P
+    // Debbuging aushauhsausuahsauhs =)
 
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+    console.log(pokeData.abilities)
 
-    console.log(iPokemon);
+    // Warn chato pedindo id ent nx faz um letzin e chama let++ no render =S
 
     let id = 1;
 
-    function PokemonResult() {
+    function TypeResult() {
         return (
-            <div className="poketyperesult">
-                {iPokemon.map(poke => (
+            <div className="poke-display">
                     <>
-                    <div className="poketype" key={id++}>
-                        <h1 className="poketype-title">{poke.name}</h1>
-                        <img alt="Pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokemon.url.split('/')[6] + ".png"} className="sprite" />
+                    <div className="poke-card" key={id++}>
+                    <h3 className="poke-name">Name: {pokeData.name}</h3>
+                    <h3 className="poke-name">Id: {pokeData.id}</h3>
+                    <h3 className="poke-name">Base Experience: {pokeData.base_experience}</h3>
+                    <h3 className="poke-name">Weight: {pokeData.weight}</h3>
+                    <h3 className="poke-name">[...]</h3>
+                        <img alt="Pokemon" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + pokeData.id + ".png"} className="sprite" />
                     </div>
                     </>
-                ))}
             </div>
         )
     }
 
-    return(
+    return (
         <>
-        <Header />
-        <PokemonResult/>
+            <Header />
+            <TypeResult/>
         </>
     );
 }
 
 export default Pokemon;
+

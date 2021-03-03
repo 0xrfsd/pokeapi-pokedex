@@ -32,7 +32,7 @@
         display: flex;
         flex-direction: row;
         margin: 0 2.5vh !important;
-        width: 90vw;
+        width: 88vw;
         height: 30vh;
         margin-top: 5vh !important;
         border-radius: 10px;
@@ -72,16 +72,16 @@
     }
     .second {
         margin: 0 2.5vh;
-        width: 98vw;
+        width: 97vw;
         display: flex;
         flex-direction: row;
     }
     .rightodo {
-        padding-top: 15vh !important;
+        padding-top: auto !important;
         margin-top: 5vh;
         margin-right: 5vh;
         padding: 1em;
-        height: 25vh;
+        height: 20vh;
         width: 50% !important;
         border-radius: 10px;
         background-color: #333;
@@ -89,21 +89,21 @@
     }
     .leftodo {
         margin-top: 5vh;
-        padding-top: 15vh !important;
+        padding-top: auto !important;
         margin-right: 5vh;
         padding: 1em;
-        height: 25vh;
+        height: 20vh;
         width: 50% !important;
         border-radius: 10px;
         background-color: #FFDE00;
         box-shadow: 1px 1px 6px 1px #FFDE00;
     }
     .rightopodo {
-        padding-top: 15vh !important;
+        padding-top: auto !important;
         margin-top: 5vh;
         margin-right: 5vh;
         padding: 1em;
-        height: 25vh;
+        height: 20vh;
         width: 50% !important;
         border-radius: 10px;
         background-color: #3B4CCA;
@@ -166,7 +166,7 @@
         display: flex;
         flex-direction: row;
         margin: 0 5vw;
-        width: 89vw;
+        width: 90vw;
         height: 30vh;
         border-radius: 10px;
         background-color: #fff;
@@ -195,39 +195,42 @@
     }
     .second {
         margin: 0 5vw;
-        width: 91.5vw;
+        width: 93vw;
         display: flex;
         flex-direction: row;
     }
 
     .rightodo {
+        cursor: pointer;
         margin-top: 5vh;
-        padding-top: 20vh !important;
+        padding-top: auto !important;
         margin-right: 5vh;
         padding: 1em;
-        height: 25vh;
+        height: 20vh;
         width: 50% !important;
         border-radius: 10px;
         background-color: #333;
         box-shadow: 1px 1px 12px 1px #333;
     }
     .leftodo {
+        cursor: pointer;
         margin-top: 5vh;
         margin-right: 5vh;
-        padding-top: 20vh !important;
+        padding-top: auto !important;
         padding: 1em;
-        height: 25vh;
+        height: 20vh;
         width: 50% !important;
         border-radius: 10px;
         background-color: #FFDE00;
         box-shadow: 1px 1px 6px 1px #FFDE00;
     }
     .rightopodo {
+        cursor: pointer;
         margin-top: 5vh;
         margin-right: 5vh;
-        padding-top: 17.5vh !important;
+        padding-top: auto !important;
         padding: 1em;
-        height: 25vh;
+        height: 20vh;
         width: 50% !important;
         border-radius: 10px;
         background-color: #3B4CCA;
