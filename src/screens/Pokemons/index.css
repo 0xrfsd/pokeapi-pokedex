@@ -1,11 +1,14 @@
 .poked {
-    padding: 50px;
+    padding: 15px;
     background-color: #333;
-    box-shadow: 1px 1px 12px 1px #333;
     border-radius: 10px;
     width: auto;
     height: auto;
     margin-right: 20px !important;
+}
+
+.poketype-title {
+    text-align: center;
 }
 
 .input {
@@ -29,3 +32,24 @@
 .prompt::placeholder{
     color: #fff;
 }
+
+  .pokemons {
+    padding: 10\px;
+    border-radius: 5px !important;
+    margin: 40px;
+    flex: 1;
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .pokemons-title {
+    text-align: left !important;
+  }
+
+  .pokemons-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 15px;
+  }

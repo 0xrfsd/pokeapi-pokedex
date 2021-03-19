@@ -44,28 +44,25 @@ header {
 }
 
 .poketyperesult {
-    min-height: 150px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 25px;
-    border-radius: 5px !important;
-    flex: 1;
-    margin-top: 0px;
-    display: flex;
-    flex-flow: row;
-    overflow: scroll;
-    height: 330px !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 15px;
 }
 
 .poketype {
-    padding: 50px;
+    padding: 10px;
     background-color: #333;
-    box-shadow: 1px 1px 12px 1px #333;
     border-radius: 10px;
     width: auto;
-    height: 250px;
+    max-height: 180px;
     margin-right: 20px !important;
 }
 
 .sprite {
-    width: 100%;
+    width: 80%;
     height: auto;
 }

@@ -17,7 +17,7 @@ function App() {
   // useEffect hook to sync and mount the fetchAPI reqs
 
   useEffect(() => {
-    fetchAPI()
+    fetchAPI();
   }, [])
 
   // A random pokemon id selector from 1 to 151
@@ -45,18 +45,22 @@ function App() {
   // Also if the pokemon not exists (!monExists) in the pokedex sort it in ascending order.
 
   const catchPokemon = (pokemon) => {
-    setPokedex(state => {
-      const monExists = (state.filter(p => pokemon.id === p.id).length > 0);
-
-      if (!monExists) {
-        state = [...state, pokemon]
-        state.sort(function (a, b) {
-          return a.name - b.name
-        })
-      }
-      return state
-    })
-    fetchAPI()
+    if(pokedex.length < 16) {
+      setPokedex(state => {
+        const monExists = (state.filter(p => pokemon.id === p.id).length > 0);
+  
+        if (!monExists) {
+          state = [...state, pokemon]
+          state.sort(function (a, b) {
+            return a.name - b.name
+          })
+        }
+        return state
+      })
+      fetchAPI()
+    } else {
+      alert('Você só pode ter 16 pokémons :(')
+    }
   }
 
   const jumpPokemon = (pokemon) => {
@@ -69,12 +73,17 @@ function App() {
 
   // Constante que recebe os indices da pokedex como 'pokemon' e retorna o indice 'pokemon'
 
-  const pokeMap = pokedex.map(pokemon => pokemon);
+  // const pokeMap = () => pokedex.map((pokemon) => {});
+  
+
+  // pokeMap();
+
+  // console.log(JSON.stringify(pokeMap));
 
   // Algoritmo de sort em ordem ascendente (alfabetica) recebendo 'name'
-  // Constante que recebe o valor da pokedex[] e aplica um alg sort de ordem alfabetica
+  // Recebe o valor da pokedex[] e aplica um alg sort de ordem alfabetica
 
-  const pokeMapAlph = pokedex.sort(function (a, b) {
+   pokedex.sort(function (a, b) {
     if (a.name < b.name) { return -1; }
     if (a.name > b.name) { return 1; }
     return 0;

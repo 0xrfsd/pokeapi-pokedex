@@ -58,7 +58,6 @@
     max-height: 250px;
     width: auto !important;
     background: #DC6937;
-    box-shadow: 1px 1px 10px 1px #DC6937;
     padding: 10px;
   }
   .wild-pokemon h2 {
@@ -92,7 +91,6 @@
 
  .buttons .catch-btn {
     border-radius: 5px;
-    box-shadow: 1px 1px 5px 1px #F7A800;
     width: 150px;
     padding: 10px;
     height: auto;
@@ -109,7 +107,6 @@
 .buttons .jump-btn {
   padding: 10px;
   border-radius: 5px;
-    box-shadow: 1px 1px 5px 1px red;
     width: 200px;
     height: auto;
     display: block;
@@ -177,6 +174,7 @@
   }
 
   .pokedex {
+    flex-wrap: wrap !important;
     padding: 10px;
     border-radius: 5px !important;
     margin: 40px;
@@ -185,7 +183,6 @@
     margin-top: 0px;
     display: flex;
     flex-flow: column;
-    overflow: scroll;
   }
 
   .pokedex-title {
@@ -195,8 +192,8 @@
   .pokedex-list {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-gap: 25px;
   }
   
   .pokemon-name {
